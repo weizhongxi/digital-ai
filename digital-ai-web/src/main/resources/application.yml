@@ -1,0 +1,17 @@
+server:
+  port: 8001
+spring:
+  profiles:
+    active: dev
+  #配置 Jpa
+  jpa:
+    properties:
+      hibernate:
+        ddl-auto: none
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        jdbc: # 增加批量添加优化
+          batch_size: 2000
+          batch_versioned_data: true
+        order_inserts: true
+        order_updates: true
+    open-in-view: true
